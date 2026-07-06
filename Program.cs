@@ -141,6 +141,33 @@ namespace ContactConsoleApp_PresentationLayer
         }
 
 
+        static void FindCountryByID(int ID)
+        {
+            clsCountries Country = clsCountries.Find(ID);
+           if (Country != null)
+            {
+                Console.WriteLine(Country.CountryName);
+            }else
+            {
+                Console.WriteLine("Conutry Not Found ");
+            }
+
+
+
+
+           
+
+        }
+
+
+
+        static bool CheckCountryNameExistance(string CountryName)
+        {
+            return clsCountries.CheckCountryNameExistance(CountryName);
+        }
+
+
+
         static void Main(string[] args)
         {
 
@@ -154,16 +181,32 @@ namespace ContactConsoleApp_PresentationLayer
 
             //testDeleteContact(15);
 
-           // ListAllContacts();
+            // ListAllContacts();
 
 
-            if(IsContactExist(1))
-            {
-                Console.WriteLine("IS EXIST");
-            }else
-            {
-                Console.WriteLine("NOT EXIST");
-            }
+            //if(IsContactExist(1))
+            //{
+            //    Console.WriteLine("IS EXIST");
+            //}else
+            //{
+            //    Console.WriteLine("NOT EXIST");
+            //}
+
+
+             // FindCountryByID(1);
+
+
+            //if(CheckCountryNameExistance("germany"))
+            //{
+            //    Console.Write("EXISTS");
+            //}
+            //else
+            //{
+            //    Console.Write("NOT EXISTS");
+            //}
+
+
+
 
 
 
