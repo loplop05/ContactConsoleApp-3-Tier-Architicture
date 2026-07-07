@@ -79,6 +79,7 @@ namespace ContactConsoleApp_PresentationLayer
                 MessageBox.Show("This Form will be closed because no caontant with this ID");
 
                 this.Close();
+
             }
 
 
