@@ -82,16 +82,16 @@ namespace ContactConsoleApp_PresentationLayer
 
             }
 
+            lblMode.Text = "Edit Contact ID = " + _ContactID;
+            lblContactID.Text = _ContactID.ToString();
 
-
+            txtFirstName.Text = _Contact.FirstName;
+            txtLastName.Text = _Contact.LastName ;
+            txtEmail.Text = _Contact.Email;
+            txtPhone.Text = _Contact.Phone;
+            txtAddress.Text = _Contact.Address;
+            txtDateOfBirth.Text = _Contact.DateOfBirth.ToString();
         }
-
-
-
-
-
-
-
 
     }
 }
