@@ -166,14 +166,14 @@ namespace ContactConsoleApp_PresentationLayer
             return clsCountries.CheckCountryNameExistance(CountryName);
         }
 
-
+        
 
         static void Main(string[] args)
         {
-
+            for(int i = 0; i < 14; i++) { }
 
             //testFindContact(1);
-
+           
             // testAddNewContact();
 
             //testUpdateContact(15);
@@ -205,7 +205,7 @@ namespace ContactConsoleApp_PresentationLayer
             //    Console.Write("NOT EXISTS");
             //}
 
-
+           
 
 
 
