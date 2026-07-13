@@ -32,5 +32,12 @@ namespace ContactConsoleApp_PresentationLayer
         {
             _RefreshContactsList();
         }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditContact frm = new frmAddEditContact((int)dgvAllContacts.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            _RefreshContactsList();
+        }
     }
 }

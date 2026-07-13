@@ -147,11 +147,23 @@ namespace ContactConsoleApp_PresentationLayer
 
 
 
-
-
-
         }
 
+        struct CountryItem
+        {
+
+            public string text;
+            public string value; 
+
+            public CountryItem(string text, string value)
+            {
+                this.text = text;
+                this.value = value; 
+
+            }
+        
+        
+        }
 
 
 
