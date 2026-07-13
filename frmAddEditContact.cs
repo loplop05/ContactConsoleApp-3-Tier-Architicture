@@ -97,6 +97,10 @@ namespace ContactConsoleApp_PresentationLayer
 
             }
 
+            LLremoveImage.Visible = (_Contact.ImagePath != "");
+
+
+            cbCountries.SelectedIndex = cbCountries.FindString(clsCountries.Find(_Contact.CountryID).CountryName);
             
 
 
