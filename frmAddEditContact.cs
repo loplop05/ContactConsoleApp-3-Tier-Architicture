@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace ContactConsoleApp_PresentationLayer
 {
     public partial class frmAddEditContact : Form
@@ -25,6 +25,7 @@ namespace ContactConsoleApp_PresentationLayer
 
         int _ContactID;
         clsContact _Contact;
+
 
 
         public frmAddEditContact()
@@ -77,7 +78,7 @@ namespace ContactConsoleApp_PresentationLayer
                 MessageBox.Show("This Form will be closed because no caontant with this ID");
 
                 this.Close();
-
+                return;
             }
 
             lblMode.Text = "Edit Contact ID =   " + _ContactID;
@@ -96,17 +97,23 @@ namespace ContactConsoleApp_PresentationLayer
             {
                 dtDateOfBirth.Value = DateTime.Now;
             }
-            if (_Contact.ImagePath != "")
+            if (!string.IsNullOrEmpty(_Contact.ImagePath))
             {
-                PictureBox1.Load(_Contact.ImagePath);
-
+                if (File.Exists(_Contact.ImagePath))
+                {
+                    PictureBox1.Load(_Contact.ImagePath);
+                }
             }
 
             LLremoveImage.Visible = (_Contact.ImagePath != "");
 
 
-            cbCountries.SelectedIndex = cbCountries.FindString(clsCountries.Find(_Contact.CountryID).CountryName);
-            
+            var Country = clsCountries.Find(_Contact.CountryID);
+
+            if (Country != null)
+            {
+                cbCountries.SelectedIndex = cbCountries.FindString(Country.CountryName);
+            }
 
 
 
@@ -119,9 +126,8 @@ namespace ContactConsoleApp_PresentationLayer
             _Contact.FirstName = txtFirstName.Text;
             _Contact.LastName = txtLastName.Text;
             _Contact.Email = txtEmail.Text;
-            _Contact.Address = txtPhone.Text;
-            _Contact.Phone = txtAddress.Text;
-            _Contact.Phone = txtAddress.Text;
+            _Contact.Phone = txtPhone.Text;
+            _Contact.Address = txtAddress.Text;
             _Contact.DateOfBirth = dtDateOfBirth.Value;
             _Contact.CountryID = CountryID;
 
@@ -171,11 +177,19 @@ namespace ContactConsoleApp_PresentationLayer
 
         private void LLsetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            MessageBox.Show("Entered Event");
+
             OpenFileDialog ofd = new OpenFileDialog();
+
+            MessageBox.Show("Dialog Created");
 
             ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
 
-            if (ofd.ShowDialog() == DialogResult.OK)
+            DialogResult result = ofd.ShowDialog();
+
+            MessageBox.Show("Dialog Closed");
+
+            if (result == DialogResult.OK)
             {
                 PictureBox1.ImageLocation = ofd.FileName;
                 LLremoveImage.Visible = true;
