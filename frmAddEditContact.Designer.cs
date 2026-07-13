@@ -45,6 +45,8 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtDateOfBirth = new System.Windows.Forms.TextBox();
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbCountries
@@ -80,7 +82,7 @@
             this.lblMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMode.Location = new System.Drawing.Point(181, 18);
             this.lblMode.Name = "lblMode";
-            this.lblMode.Size = new System.Drawing.Size(106, 39);
+            this.lblMode.Size = new System.Drawing.Size(102, 38);
             this.lblMode.TabIndex = 3;
             this.lblMode.Text = "Mode";
             // 
@@ -90,7 +92,7 @@
             this.lblContactID.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactID.Location = new System.Drawing.Point(385, 18);
             this.lblContactID.Name = "lblContactID";
-            this.lblContactID.Size = new System.Drawing.Size(37, 39);
+            this.lblContactID.Size = new System.Drawing.Size(36, 38);
             this.lblContactID.TabIndex = 4;
             this.lblContactID.Text = "?";
             // 
@@ -100,7 +102,7 @@
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFirstName.Location = new System.Drawing.Point(22, 124);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(183, 39);
+            this.lblFirstName.Size = new System.Drawing.Size(177, 38);
             this.lblFirstName.TabIndex = 5;
             this.lblFirstName.Text = "FirstName";
             // 
@@ -110,7 +112,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(22, 181);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 39);
+            this.label3.Size = new System.Drawing.Size(174, 38);
             this.label3.TabIndex = 6;
             this.label3.Text = "LastName";
             // 
@@ -120,7 +122,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(22, 241);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 39);
+            this.label4.Size = new System.Drawing.Size(103, 38);
             this.label4.TabIndex = 7;
             this.label4.Text = "Email";
             // 
@@ -130,7 +132,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(22, 293);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 39);
+            this.label5.Size = new System.Drawing.Size(116, 38);
             this.label5.TabIndex = 8;
             this.label5.Text = "Phone";
             // 
@@ -140,7 +142,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(19, 347);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 39);
+            this.label6.Size = new System.Drawing.Size(145, 38);
             this.label6.TabIndex = 9;
             this.label6.Text = "Address";
             // 
@@ -150,7 +152,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(19, 400);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(205, 39);
+            this.label7.Size = new System.Drawing.Size(199, 38);
             this.label7.TabIndex = 10;
             this.label7.Text = "DateOfBirth";
             // 
@@ -202,11 +204,20 @@
             this.txtDateOfBirth.Size = new System.Drawing.Size(202, 34);
             this.txtDateOfBirth.TabIndex = 16;
             // 
+            // PictureBox1
+            // 
+            this.PictureBox1.Location = new System.Drawing.Point(474, 65);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(148, 187);
+            this.PictureBox1.TabIndex = 17;
+            this.PictureBox1.TabStop = false;
+            // 
             // frmAddEditContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 602);
+            this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.txtDateOfBirth);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtPhone);
@@ -227,6 +238,7 @@
             this.Name = "frmAddEditContact";
             this.Text = "frmAddEditContact";
             this.Load += new System.EventHandler(this.frmAddEditContact_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +263,6 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtDateOfBirth;
+        private System.Windows.Forms.PictureBox PictureBox1;
     }
 }

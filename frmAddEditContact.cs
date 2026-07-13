@@ -91,6 +91,17 @@ namespace ContactConsoleApp_PresentationLayer
             txtPhone.Text = _Contact.Phone;
             txtAddress.Text = _Contact.Address;
             txtDateOfBirth.Text = _Contact.DateOfBirth.ToString();
+            if(_Contact.ImagePath != "")
+            {
+                PictureBox1.Load(_Contact.ImagePath);
+
+            }
+
+            
+
+
+
+
         }
 
     }
