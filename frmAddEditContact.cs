@@ -17,7 +17,7 @@ namespace ContactConsoleApp_PresentationLayer
 
         private void frmAddEditContact_Load(object sender, EventArgs e)
         {
-
+            _LoadData();
         }
 
         public enum enMode { addNew = 0 , Update = 1 };
@@ -46,13 +46,9 @@ namespace ContactConsoleApp_PresentationLayer
         {
             DataTable dtCountries = clsCountries.GetAllCountries();
 
-            foreach(DataRow row in dtCountries.Rows)
-            {
-
-                cbCountries.Items.Add(row["CountryName"]);
-
-
-            }
+            cbCountries.DataSource = dtCountries;
+            cbCountries.DisplayMember = "CountryName";
+            cbCountries.ValueMember = "CountryID";
 
 
 
@@ -84,7 +80,7 @@ namespace ContactConsoleApp_PresentationLayer
 
             }
 
-            lblMode.Text = "Edit Contact ID = " + _ContactID;
+            lblMode.Text = "Edit Contact ID =   " + _ContactID;
             lblContactID.Text = _ContactID.ToString();
 
             txtFirstName.Text = _Contact.FirstName;
@@ -112,13 +108,12 @@ namespace ContactConsoleApp_PresentationLayer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int CountryID = clsCountries.Find((int)cbCountries.SelectedValue).CountryID;
-
+            int CountryID = (int)cbCountries.SelectedValue;
             _Contact.FirstName = txtFirstName.Text;
             _Contact.LastName = txtLastName.Text;
             _Contact.Email = txtEmail.Text;
-            _Contact.Phone = txtPhone.Text;
             _Contact.Address = txtPhone.Text;
+            _Contact.Phone = txtAddress.Text;
             _Contact.Phone = txtAddress.Text;
             _Contact.DateOfBirth = dtDateOfBirth.Value;
             _Contact.CountryID = CountryID;
@@ -143,7 +138,7 @@ namespace ContactConsoleApp_PresentationLayer
 
 
             _Mode = enMode.Update;
-            lblMode.Text = "Edit Contact = " + _Contact.ID;
+            lblMode.Text = "Edit Contact =   " + _Contact.ID;
 
             lblContactID.Text = _Contact.ID.ToString();
 
@@ -167,7 +162,22 @@ namespace ContactConsoleApp_PresentationLayer
         
         }
 
+        private void LLsetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
 
+            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
 
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                PictureBox1.ImageLocation = ofd.FileName;
+                LLremoveImage.Visible = true;
+            }
+        }
+
+        private void lblMode_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

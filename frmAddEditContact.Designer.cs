@@ -91,6 +91,7 @@
             this.lblMode.Size = new System.Drawing.Size(102, 38);
             this.lblMode.TabIndex = 3;
             this.lblMode.Text = "Mode";
+            this.lblMode.Click += new System.EventHandler(this.lblMode_Click);
             // 
             // lblContactID
             // 
@@ -257,6 +258,7 @@
             this.LLsetImage.TabIndex = 22;
             this.LLsetImage.TabStop = true;
             this.LLsetImage.Text = "Set Image";
+            this.LLsetImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LLsetImage_LinkClicked);
             // 
             // LLremoveImage
             // 
