@@ -44,7 +44,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtDateOfBirth = new System.Windows.Forms.TextBox();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -52,6 +51,7 @@
             this.addressTxt = new System.Windows.Forms.TextBox();
             this.LLsetImage = new System.Windows.Forms.LinkLabel();
             this.LLremoveImage = new System.Windows.Forms.LinkLabel();
+            this.dtDateOfBirth = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,14 +202,6 @@
             this.txtAddress.Size = new System.Drawing.Size(202, 34);
             this.txtAddress.TabIndex = 15;
             // 
-            // txtDateOfBirth
-            // 
-            this.txtDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateOfBirth.Location = new System.Drawing.Point(245, 400);
-            this.txtDateOfBirth.Name = "txtDateOfBirth";
-            this.txtDateOfBirth.Size = new System.Drawing.Size(202, 34);
-            this.txtDateOfBirth.TabIndex = 16;
-            // 
             // PictureBox1
             // 
             this.PictureBox1.Location = new System.Drawing.Point(474, 129);
@@ -235,6 +227,7 @@
             this.btnSave.TabIndex = 19;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label2
             // 
@@ -242,7 +235,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(29, 501);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 36);
+            this.label2.Size = new System.Drawing.Size(102, 29);
             this.label2.TabIndex = 20;
             this.label2.Text = "Address";
             // 
@@ -271,16 +264,25 @@
             this.LLremoveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LLremoveImage.Location = new System.Drawing.Point(502, 78);
             this.LLremoveImage.Name = "LLremoveImage";
-            this.LLremoveImage.Size = new System.Drawing.Size(136, 36);
+            this.LLremoveImage.Size = new System.Drawing.Size(109, 29);
             this.LLremoveImage.TabIndex = 23;
             this.LLremoveImage.TabStop = true;
             this.LLremoveImage.Text = "Remove";
+            // 
+            // dtDateOfBirth
+            // 
+            this.dtDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtDateOfBirth.Location = new System.Drawing.Point(224, 400);
+            this.dtDateOfBirth.Name = "dtDateOfBirth";
+            this.dtDateOfBirth.Size = new System.Drawing.Size(294, 30);
+            this.dtDateOfBirth.TabIndex = 24;
             // 
             // frmAddEditContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 598);
+            this.Controls.Add(this.dtDateOfBirth);
             this.Controls.Add(this.LLremoveImage);
             this.Controls.Add(this.LLsetImage);
             this.Controls.Add(this.addressTxt);
@@ -288,7 +290,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.PictureBox1);
-            this.Controls.Add(this.txtDateOfBirth);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtEmail);
@@ -332,7 +333,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtDateOfBirth;
         private System.Windows.Forms.PictureBox PictureBox1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
@@ -340,5 +340,6 @@
         private System.Windows.Forms.TextBox addressTxt;
         private System.Windows.Forms.LinkLabel LLsetImage;
         private System.Windows.Forms.LinkLabel LLremoveImage;
+        private System.Windows.Forms.DateTimePicker dtDateOfBirth;
     }
 }

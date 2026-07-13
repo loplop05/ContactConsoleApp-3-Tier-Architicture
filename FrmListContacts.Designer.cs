@@ -94,6 +94,7 @@
             this.Controls.Add(this.dgvAllContacts);
             this.Name = "FrmListContacts";
             this.Text = "FrmListContacts";
+            this.Load += new System.EventHandler(this.FrmListContacts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllContacts)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

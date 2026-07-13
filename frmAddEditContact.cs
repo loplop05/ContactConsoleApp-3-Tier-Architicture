@@ -90,7 +90,7 @@ namespace ContactConsoleApp_PresentationLayer
             txtEmail.Text = _Contact.Email;
             txtPhone.Text = _Contact.Phone;
             txtAddress.Text = _Contact.Address;
-            txtDateOfBirth.Text = _Contact.DateOfBirth.ToString();
+            dtDateOfBirth.Text = _Contact.DateOfBirth.ToString();
             if(_Contact.ImagePath != "")
             {
                 PictureBox1.Load(_Contact.ImagePath);
@@ -107,6 +107,53 @@ namespace ContactConsoleApp_PresentationLayer
 
 
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            int CountryID = clsCountries.Find((int)cbCountries.SelectedValue).CountryID;
+
+            _Contact.FirstName = txtFirstName.Text;
+            _Contact.LastName = txtLastName.Text;
+            _Contact.Email = txtEmail.Text;
+            _Contact.Phone = txtPhone.Text;
+            _Contact.Address = txtPhone.Text;
+            _Contact.Phone = txtAddress.Text;
+            _Contact.DateOfBirth = dtDateOfBirth.Value;
+            _Contact.CountryID = CountryID;
+
+            if(PictureBox1.ImageLocation != null)
+            {
+                _Contact.ImagePath = PictureBox1.ImageLocation;
+
+            }else
+            {
+                _Contact.ImagePath = "";
+            }
+
+
+            if(_Contact.Save())
+            {
+                MessageBox.Show("Data saved Successfully ! ");
+            }else
+            {
+                MessageBox.Show("Error : Data NOT saved Successfully");
+            }
+
+
+            _Mode = enMode.Update;
+            lblMode.Text = "Edit Contact = " + _Contact.ID;
+
+            lblContactID.Text = _Contact.ID.ToString();
+
+
+
+
+
+
+        }
+
+
+
 
     }
 }

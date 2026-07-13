@@ -27,5 +27,10 @@ namespace ContactConsoleApp_PresentationLayer
         {
                 
         }
+
+        private void FrmListContacts_Load(object sender, EventArgs e)
+        {
+            _RefreshContactsList();
+        }
     }
 }

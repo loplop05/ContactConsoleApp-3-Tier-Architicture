@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using ContactsBusinessLayer;
+using System.Windows.Forms;
 
 namespace ContactConsoleApp_PresentationLayer
 {
@@ -170,10 +171,10 @@ namespace ContactConsoleApp_PresentationLayer
 
         static void Main(string[] args)
         {
-            for(int i = 0; i < 14; i++) { }
+
 
             //testFindContact(1);
-           
+
             // testAddNewContact();
 
             //testUpdateContact(15);
@@ -193,7 +194,7 @@ namespace ContactConsoleApp_PresentationLayer
             //}
 
 
-             // FindCountryByID(1);
+            // FindCountryByID(1);
 
 
             //if(CheckCountryNameExistance("germany"))
@@ -206,8 +207,6 @@ namespace ContactConsoleApp_PresentationLayer
             //}
 
            
-
-
 
 
 
