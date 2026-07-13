@@ -206,7 +206,8 @@ namespace ContactConsoleApp_PresentationLayer
             //    Console.Write("NOT EXISTS");
             //}
 
-           
+            FrmListContacts frm = new FrmListContacts();
+            frm.ShowDialog();
 
 
 

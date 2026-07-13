@@ -39,5 +39,21 @@ namespace ContactConsoleApp_PresentationLayer
             frm.ShowDialog();
             _RefreshContactsList();
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to delete Contact ["  + dgvAllContacts.CurrentRow.Cells[0].Value  + " ?]",
+                "Confirm Delete",MessageBoxButtons.YesNo ,MessageBoxIcon.Warning)==DialogResult.Yes)
+            {
+                if (clsContact.DeleteContact((int)dgvAllContacts.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Contact Deleted Successfully");
+                    _RefreshContactsList();
+                }else
+                {
+                    MessageBox.Show("Contact Not Deleted"); 
+                }
+            }
+        }
     }
 }
