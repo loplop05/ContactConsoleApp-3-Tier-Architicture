@@ -62,7 +62,7 @@
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 80);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 52);
             // 
             // editToolStripMenuItem
             // 
@@ -86,6 +86,7 @@
             this.btnAddNewContact.TabIndex = 2;
             this.btnAddNewContact.Text = "Add New Contact";
             this.btnAddNewContact.UseVisualStyleBackColor = true;
+            this.btnAddNewContact.Click += new System.EventHandler(this.btnAddNewContact_Click);
             // 
             // FrmListContacts
             // 

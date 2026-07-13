@@ -55,5 +55,11 @@ namespace ContactConsoleApp_PresentationLayer
                 }
             }
         }
+
+        private void btnAddNewContact_Click(object sender, EventArgs e)
+        {
+            frmAddEditContact frm  = new frmAddEditContact();
+            frm.ShowDialog();
+        }
     }
 }

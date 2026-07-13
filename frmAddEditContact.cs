@@ -27,17 +27,19 @@ namespace ContactConsoleApp_PresentationLayer
         clsContact _Contact;
 
 
+        public frmAddEditContact()
+        {
+            InitializeComponent();
+
+            _Mode = enMode.addNew;
+        }
+
         public frmAddEditContact(int ContactID)
         {
             InitializeComponent();
 
             _ContactID = ContactID;
-
-            if (_ContactID == -1)
-                _Mode = enMode.addNew;
-            else
-                _Mode = enMode.Update;
-
+            _Mode = enMode.Update;
         }
 
         private void _FillCountriesInComboBox()
