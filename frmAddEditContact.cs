@@ -88,8 +88,15 @@ namespace ContactConsoleApp_PresentationLayer
             txtEmail.Text = _Contact.Email;
             txtPhone.Text = _Contact.Phone;
             txtAddress.Text = _Contact.Address;
-            dtDateOfBirth.Text = _Contact.DateOfBirth.ToString();
-            if(_Contact.ImagePath != "")
+            if (_Contact.DateOfBirth >= dtDateOfBirth.MinDate && _Contact.DateOfBirth <= dtDateOfBirth.MaxDate)
+            {
+                dtDateOfBirth.Value = _Contact.DateOfBirth;
+            }
+            else
+            {
+                dtDateOfBirth.Value = DateTime.Now;
+            }
+            if (_Contact.ImagePath != "")
             {
                 PictureBox1.Load(_Contact.ImagePath);
 
@@ -178,6 +185,11 @@ namespace ContactConsoleApp_PresentationLayer
         private void lblMode_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
